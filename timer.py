@@ -24,14 +24,14 @@ print('##### POMODORO TIMER #####')
 while True:
     if target_time <= datetime.now():
         print('Pomodoro!') 
-        print('Take a short break!')
-        countdown(short_break_eta)
         pomodoros += 1
         if pomodoros == 4:
             #long break
             print('Take a longer break. You deserve it :)')
             countdown(long_break_eta)
             pomodoros = 0
-        break
+        else:
+            print('Take a short break!')
+            countdown(short_break_eta) 
     else:
         countdown(pomodoro_eta)
