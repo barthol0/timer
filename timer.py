@@ -30,8 +30,11 @@ while True:
             print('Take a longer break. You deserve it :)')
             countdown(long_break_eta)
             pomodoros = 0
+            user_answer = input('Continue? (Type anything and press [Enter] to continue)')
         else:
             print('Take a short break!')
             countdown(short_break_eta) 
+            user_answer = input('Continue? (Type anything and press [Enter] to continue)')
+            
     else:
         countdown(pomodoro_eta)
