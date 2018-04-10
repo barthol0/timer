@@ -22,7 +22,9 @@ target_time = datetime.now() + pomodoro_eta
 
 print('##### POMODORO TIMER #####')
 while True:
-    if target_time <= datetime.now():
+    for i in range(4):
+        print('Counting down...')
+        countdown(pomodoro_eta)
         print('Pomodoro!') 
         pomodoros += 1
         if pomodoros == 4:
@@ -30,11 +32,8 @@ while True:
             print('Take a longer break. You deserve it :)')
             countdown(long_break_eta)
             pomodoros = 0
-            user_answer = input('Continue? (Type anything and press [Enter] to continue)')
+            input('Press [ENTER] to continue.')
         else:
             print('Take a short break!')
             countdown(short_break_eta) 
-            user_answer = input('Continue? (Type anything and press [Enter] to continue)')
-            
-    else:
-        countdown(pomodoro_eta)
+            input('Press [ENTER] to continue')
